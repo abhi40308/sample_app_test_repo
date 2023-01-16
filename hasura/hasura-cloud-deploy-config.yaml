@@ -1,0 +1,17 @@
+name: "hasura-sample-app"
+
+static-env:
+  STREAMING_SUBSCRIPTION_FLAG: true
+  HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+  HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: "inherited_roles"
+  HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: true
+
+user-env:
+  ACTION_WEBHOOK_URL:
+    default: "http://localhost:3000"
+    description: "Action webhook url"
+    mandatory: true
+  EVENT_HANDLER_URL:
+    default: "http://httpbin.org/post"
+    description: "Base url for event handlers"
+    mandatory: true
