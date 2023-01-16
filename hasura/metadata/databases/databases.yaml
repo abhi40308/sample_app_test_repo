@@ -1,11 +1,18 @@
-- name: mssql
-  kind: mssql
+- name: default
+  kind: postgres
   configuration:
     connection_info:
-      connection_string:
-        from_env: MSSERVER_DB_URL
-      pool_settings:
-        idle_timeout: 5
-        max_connections: null
-        total_max_connections: null
-  tables: "!include mssql/tables/tables.yaml"
+      database_url:
+        from_env: PG_DATABASE_URL
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include default/tables/tables.yaml"
+- name: pg2
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: PG_DATABASE_URL_2
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include pg2/tables/tables.yaml"
