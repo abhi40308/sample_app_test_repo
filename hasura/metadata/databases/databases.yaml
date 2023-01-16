@@ -1,23 +1,23 @@
-- name: citus
-  kind: citus
-  configuration:
-    connection_info:
-      database_url:
-        from_env: CITUS_DB_URL
-      isolation_level: read-committed
-      use_prepared_statements: false
-  tables: "!include citus/tables/tables.yaml"
-- name: mssql
-  kind: mssql
-  configuration:
-    connection_info:
-      connection_string:
-        from_env: MSSERVER_DB_URL
-      pool_settings:
-        idle_timeout: 5
-        max_connections: null
-        total_max_connections: null
-  tables: "!include mssql/tables/tables.yaml"
+# - name: citus
+#   kind: citus
+#   configuration:
+#     connection_info:
+#       database_url:
+#         from_env: CITUS_DB_URL
+#       isolation_level: read-committed
+#       use_prepared_statements: false
+#   tables: "!include citus/tables/tables.yaml"
+# - name: mssql
+#   kind: mssql
+#   configuration:
+#     connection_info:
+#       connection_string:
+#         from_env: MSSERVER_DB_URL
+#       pool_settings:
+#         idle_timeout: 5
+#         max_connections: null
+#         total_max_connections: null
+#   tables: "!include mssql/tables/tables.yaml"
 - name: pg_db
   kind: postgres
   configuration:
