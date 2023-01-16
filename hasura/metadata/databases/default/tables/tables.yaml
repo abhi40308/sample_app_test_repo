@@ -1,1 +1,2 @@
-[]
+- "!include _onetoone_owner.yaml"
+- "!include _onetoone_passport_info.yaml"
