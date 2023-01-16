@@ -1,0 +1,3 @@
+table:
+  name: ocd_test
+  schema: dbo
